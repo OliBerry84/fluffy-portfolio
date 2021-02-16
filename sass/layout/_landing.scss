@@ -1,0 +1,137 @@
+.landing-page {
+    grid-column: full-start / full-end;
+
+    background-image: linear-gradient(
+        rgba($color-landing, .95),
+        rgba($color-landing, .95)),
+        url(../img/mac.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: $color-white;
+
+    display: grid;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-template-rows: repeat(3, min-content);
+    justify-content: center;
+    align-content: center;
+
+    &__header {
+        font-size: 20rem;
+        font-weight: 300;
+
+        @media only screen and (max-width: $bp-largest) {
+            font-size: 17rem;
+        }
+
+        @media only screen and (max-width: $bp-large) {
+            font-size: 13rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 10rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 8rem;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            font-size: 5.5rem;
+        }
+    }
+
+    &__company {
+        font-size: 4rem;
+        font-weight: 100;
+
+        grid-row: 2 / 3;
+        align-self: end;
+        justify-self: end;
+        padding: 2rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 3rem;
+            margin-right: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            align-self: center;
+            justify-self: center;
+        }
+
+        @media only screen and (max-width: $bp-smallest) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+        text-transform: uppercase;
+        align-self: end;
+        justify-self: end;       
+        margin-top: 10rem;
+
+        text-align: right;
+
+        cursor: pointer;
+
+        li:not(:first-child) {
+            margin-top: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+
+    }
+
+    &__link {
+        font-size: 1.75rem;
+        font-weight: 200; 
+        color: $color-secondary;
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: $color-secondary;
+        text-decoration: none;
+    }
+
+    &__link:hover,
+    &__link:active {
+        color: $color-white;
+    }
+
+
+    &__boxer {
+        display: inline-block;
+        position: relative;
+        
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 5rem;
+            height: 2px;
+            background: $color-secondary;
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 1.5rem;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 1.5rem;
+        }
+
+    }
+
+}
+
